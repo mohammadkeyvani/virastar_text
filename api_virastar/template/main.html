@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ویراستار</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{{ static_url('css/bootstrap.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ static_url('css/custom.css') }}">
+</head>
+<body>
+    <div class="container style_body">
+        <div class="col-md-12">
+                <div class="row coll">
+                    <div class="col-md-1 pull-right">
+                        <span class="span_style ">ایمیل: </span>
+                    </div>
+                    <div class="col-md-6 pull-right"> <input class="form-control  email" type="email"></div>
+                    <div class="col-md-5"><div class="btn btn-success click">ارسال</div></div>
+
+                </div>
+
+        </div>
+        <div class="col-md-12 box">
+            بعد از وارد کردن ایمیل و صحت از تکراری نبودن آن و زدن دکمه ارسال برای شما یک توکن در این محل قرار می گیرد
+        </div>
+        <div class="col-md-12 point">
+            <h3 class="h_style">نکات</h3>
+            <ul>
+                <li>
+                    درخواست های خود را با متد post ارسال کنید.
+                </li>
+                <li> دو پارامتر token و  data را ارسال کنید</li>
+                <li>شما در یک روز می توانید فقط 20 درخواست ارسال کنید</li>
+            </ul>
+        </div>
+    </div>
+
+<script src="{{ static_url('js/bootstrap.min.js') }}"></script>
+<script src="{{ static_url('js/jquery-2.1.4.js') }}"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $(".click").click(function(){
+            var email = $("input[type='email']").val();
+            $.ajax({
+                url: "/main",
+                type: "POST",
+                data: {email:email},
+                success: function (response) {
+                   var data = JSON.parse(response);
+                    $(".box").html("");
+                    $(".box").html(data['message'])
+                },
+                error: function () {
+                    alert("Error ...")
+                }
+            });
+
+        })
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+
+
+/*section font */
+@font-face {
+    font-family: sans;
+    src: url("../fonts/Sans.ttf"),url("../fonts/Sans.woff");
+}
+
+@font-face {
+    font-family: yekan;
+    src: url("../fonts/BYekan.ttf");
+}
+@font-face {
+    font-family: nazanin;
+    src: url("../fonts/B%20Nazanin+%20Regular.ttf");
+}
+
+*{
+    direction: rtl;
+}
+body{
+    background-color: lightgray;
+}
+.style_body{
+    background-color: whitesmoke;
+    margin-top: 20px;
+    min-height: 200px;
+}
+.span_style{
+    font-family: sans,sans-serif;
+    font-size: 12pt;
+}
+.email{
+    display: inline !important;
+}
+.h_style{
+    color: rgba(232, 0, 0, 0.69);
+    font-family: yekan,sans-serif;
+}
+.coll{
+    margin-top: 20px;
+}
+
+.box{
+    font-family: nazanin,sans-serif;
+    font-size: 12pt;
+    height: 100px;
+    border: 2px dashed gray;
+    margin-top: 20px;
+    padding: 10px;
+}
+.point  li{
+    font-family: nazanin,sans-serif;
+    font-size: 12pt;
+    list-style: decimal;
+}
